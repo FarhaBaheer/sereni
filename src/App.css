@@ -1,0 +1,54 @@
+function App() {
+  return (
+    <div className="min-h-screen bg-[#f5f1ff] flex items-center justify-center relative overflow-hidden">
+
+      {/* lavender background pattern */}
+      <div className="absolute inset-0 grid grid-cols-6 gap-16 place-items-center opacity-25 animate-breathe text-4xl">
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+        <span>💜</span>
+      </div>
+
+      {/* login card */}
+      <div className="bg-white p-10 rounded-3xl shadow-xl w-96 text-center relative z-10">
+
+        <h1 className="text-4xl font-bold text-purple-400 mb-2">
+          Sereni
+        </h1>
+
+        <p className="text-gray-500 mb-8 text-sm">
+          calm. aesthetic. organized.
+        </p>
+
+        <input
+          type="text"
+          placeholder="Username"
+          className="w-full p-3 mb-4 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200"
+        />
+
+        <input
+          type="password"
+          placeholder="Password"
+          className="w-full p-3 mb-6 border border-gray-200 rounded-xl focus:outline-none focus:ring-2 focus:ring-purple-200"
+        />
+
+        <button className="w-full bg-purple-300 text-white p-3 rounded-xl hover:bg-purple-400 transition">
+          Login
+        </button>
+
+      </div>
+
+    </div>
+  )
+}
+
+export default App
