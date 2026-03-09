@@ -1,9 +1,9 @@
 import workoutGirl from "../assets/images/workoutGirl.jpg"
-
+import Navbar from "../components/Navbar"
 function Workout() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-[#f2edff] via-[#e6dcff] to-[#d9ccff] flex flex-col">
-
+    <Navbar />
       {/* Header */}
       <div className="text-center pt-10 pb-6">
 

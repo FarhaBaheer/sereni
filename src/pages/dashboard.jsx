@@ -1,5 +1,6 @@
 import { useNavigate } from "react-router-dom"
 import Card from "../components/Card"
+import Navbar from "../components/Navbar"
 
 import gate from "../assets/images/gate.png"
 import academics from "../assets/images/academics.png"
@@ -13,6 +14,7 @@ function Dashboard() {
   return (
   <div className="min-h-screen bg-[#e9e1ff] flex flex-col">  
 
+      <Navbar />
       {/* Top section */}
       <div className="text-center pt-12 pb-10">
 
@@ -35,8 +37,17 @@ function Dashboard() {
           <Card image={gate} title="Gate" />
           <Card image={academics} title="Academics" />
           <Card image={flow} title="Flow" />
-          <Card image={finance} title="Finance" />
-          <Card image={diet} title="Diet" />
+
+
+          <div onClick={() => navigate("/finance")} className="cursor-pointer">
+             <Card image={finance} title="Finance" />
+          </div>
+
+
+          <div onClick={() => navigate("/diet")} className="cursor-pointer">
+             <Card image={diet} title="Diet and health" />
+          </div>
+
 
           <div onClick={() => navigate("/workout")}>
              <Card image={workout} title="Workout" />
