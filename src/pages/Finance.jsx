@@ -3,7 +3,8 @@ import Navbar from "../components/Navbar"
 
 function Finance() {
 
-  const [balance, setBalance] = useState(0)
+  // Current balance stored as string for editable input
+  const [balance, setBalance] = useState("0")
 
   // Daily Expenses
   const [expenseDate, setExpenseDate] = useState("")
@@ -38,7 +39,8 @@ function Finance() {
     }
 
     setExpenses([...expenses, newExpense])
-    setBalance(balance - Number(amount))
+    // Update balance as string
+    setBalance((prev) => (Number(prev) - Number(amount)).toString())
 
     setExpense("")
     setAmount("")
@@ -47,7 +49,7 @@ function Finance() {
   // Delete Expense
   const deleteExpense = (id) => {
     const removed = expenses.find((e) => e.id === id)
-    setBalance(balance + removed.amount)
+    setBalance((prev) => (Number(prev) + removed.amount).toString())
     setExpenses(expenses.filter((e) => e.id !== id))
   }
 
@@ -57,7 +59,6 @@ function Finance() {
   // Money Owed To Me
   const addOwed = () => {
     if (!person || !oweAmount) return
-
     setOwedList([...owedList, { id: Date.now(), name: person, amount: Number(oweAmount) }])
     setPerson("")
     setOweAmount("")
@@ -70,7 +71,6 @@ function Finance() {
   // My Debts
   const addDebt = () => {
     if (!debtPerson || !debtAmount) return
-
     setDebts([...debts, { id: Date.now(), name: debtPerson, amount: Number(debtAmount) }])
     setDebtPerson("")
     setDebtAmount("")
@@ -83,12 +83,7 @@ function Finance() {
   // Finance Notes
   const addNote = () => {
     if (!noteDate || !noteText) return
-
-    setNotesList([
-      ...notesList,
-      { id: Date.now(), date: noteDate, text: noteText }
-    ])
-
+    setNotesList([...notesList, { id: Date.now(), date: noteDate, text: noteText }])
     setNoteText("")
   }
 
@@ -116,7 +111,12 @@ function Finance() {
           {/* Balance */}
           <div className="bg-white p-8 rounded-3xl shadow-lg text-center col-span-2">
             <h3 className="text-xl text-purple-400 mb-2">Current Balance</h3>
-            <p className="text-4xl font-bold text-purple-600">₹ {balance}</p>
+            <input
+              type="number"
+              value={balance}
+              onChange={(e) => setBalance(e.target.value)}
+              className="text-4xl font-bold text-purple-600 text-center w-full border-0 bg-transparent focus:outline-none"
+            />
           </div>
 
           {/* Daily Expenses */}
@@ -129,14 +129,12 @@ function Finance() {
               onChange={(e) => setExpenseDate(e.target.value)}
               className="w-full border p-2 rounded-lg mb-2"
             />
-
             <input
               value={expense}
               onChange={(e) => setExpense(e.target.value)}
               placeholder="Expense"
               className="w-full border p-2 rounded-lg mb-2"
             />
-
             <input
               value={amount}
               onChange={(e) => setAmount(e.target.value)}
@@ -178,7 +176,6 @@ function Finance() {
           {/* Money Owed To Me */}
           <div className="bg-white p-6 rounded-3xl shadow-lg">
             <h3 className="text-lg font-semibold text-purple-400 mb-3">Money Owed To Me</h3>
-
             <input
               value={person}
               onChange={(e) => setPerson(e.target.value)}
@@ -220,7 +217,6 @@ function Finance() {
           {/* My Debts */}
           <div className="bg-white p-6 rounded-3xl shadow-lg">
             <h3 className="text-lg font-semibold text-purple-400 mb-3">My Debts</h3>
-
             <input
               value={debtPerson}
               onChange={(e) => setDebtPerson(e.target.value)}
@@ -312,3 +308,5 @@ function Finance() {
 }
 
 export default Finance
+
+
