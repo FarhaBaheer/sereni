@@ -1,3 +1,4 @@
+import { useNavigate } from "react-router-dom"
 import Card from "../components/Card"
 
 import gate from "../assets/images/gate.png"
@@ -8,8 +9,9 @@ import diet from "../assets/images/diet.png"
 import workout from "../assets/images/workout.png"
 
 function Dashboard() {
+  const navigate = useNavigate()
   return (
-  <div className="min-h-screen bg-[#e9e1ff] flex flex-col">
+  <div className="min-h-screen bg-[#e9e1ff] flex flex-col">  
 
       {/* Top section */}
       <div className="text-center pt-12 pb-10">
@@ -35,7 +37,11 @@ function Dashboard() {
           <Card image={flow} title="Flow" />
           <Card image={finance} title="Finance" />
           <Card image={diet} title="Diet" />
-          <Card image={workout} title="Workout" />
+
+          <div onClick={() => navigate("/workout")}>
+             <Card image={workout} title="Workout" />
+          </div>
+
 
         </div>
 
