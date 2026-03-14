@@ -34,10 +34,17 @@ function Dashboard() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-12 w-full max-w-6xl">
 
-          <Card image={gate} title="Gate" />
-          <Card image={academics} title="Academics" />
-          <Card image={flow} title="Flow" />
+          <div onClick={() => navigate("/gate")} className="cursor-pointer">
+             <Card image={gate} title="Gate" />
+          </div>
 
+          <div onClick={() => navigate("/academics")} className="cursor-pointer">
+             <Card image={academics} title="Academics" />
+          </div>
+
+          <div onClick={() => navigate("/flow")} className="cursor-pointer">
+             <Card image={flow} title="Flow" />
+          </div>
 
           <div onClick={() => navigate("/finance")} className="cursor-pointer">
              <Card image={finance} title="Finance" />
