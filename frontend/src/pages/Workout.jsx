@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import workoutGirl from "../assets/images/workoutGirl.jpg"
 import Navbar from "../components/Navbar"
 function Workout() {
@@ -41,32 +42,32 @@ function Workout() {
           <div className="grid grid-cols-2 gap-10">
 
             {/* Card 1 */}
-            <div className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+            <Link to="/workout/today" className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center block">
               <h3 className="text-2xl font-bold text-purple-400">
                 Today's Workout
               </h3>
-            </div>
+            </Link>
 
             {/* Card 2 */}
-            <div className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+            <Link to="/workout/timer" className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center block">
               <h3 className="text-2xl font-bold text-purple-400">
                 Workout Timer
               </h3>
-            </div>
+            </Link>
 
             {/* Card 3 */}
-            <div className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+            <Link to="/workout/progress" className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center block">
               <h3 className="text-2xl font-bold text-purple-400">
                 Weekly Progress
               </h3>
-            </div>
+            </Link>
 
             {/* Card 4 */}
-            <div className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center">
+            <Link to="/workout/ideas" className="bg-gradient-to-br from-white to-[#f3efff] p-14 rounded-3xl shadow-xl hover:shadow-2xl hover:scale-105 transition-all duration-300 text-center block">
               <h3 className="text-2xl font-bold text-purple-400">
                 Workout Ideas
               </h3>
-            </div>
+            </Link>
 
           </div>
 

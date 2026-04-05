@@ -2,6 +2,10 @@ import { Routes, Route } from "react-router-dom";
 import Login from "./pages/Login";
 import Dashboard from "./pages/Dashboard";
 import Workout from "./pages/Workout";
+import TodayWorkout from "./pages/TodayWorkout";
+import WorkoutTimer from "./pages/WorkoutTimer";
+import WorkoutProgress from "./pages/WorkoutProgress";
+import WorkoutIdeas from "./pages/WorkoutIdeas";
 import DietHealth from "./pages/DietHealth";
 import Finance from "./pages/Finance";
 import Flow from "./pages/Flow";
@@ -24,6 +28,10 @@ function App() {
       <Route path="/" element={<Login />} />
       <Route path="/dashboard" element={<Dashboard />} />
       <Route path="/workout" element={<Workout />} />
+      <Route path="/workout/today" element={<TodayWorkout />} />
+      <Route path="/workout/timer" element={<WorkoutTimer />} />
+      <Route path="/workout/progress" element={<WorkoutProgress />} />
+      <Route path="/workout/ideas" element={<WorkoutIdeas />} />
       <Route path="/diet" element={<DietHealth />} />
       <Route path="/finance" element={<Finance />} />
       <Route path="/flow" element = {<Flow/>}/>
